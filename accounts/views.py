@@ -1,5 +1,5 @@
-from django.contrib.auth.views import LogoutView
-from django.shortcuts import render
+from django.contrib.auth import logout
+from django.shortcuts import redirect
 from django.urls import reverse_lazy
 from django.views.generic import CreateView
 
@@ -11,8 +11,6 @@ class SignupView(CreateView):
     success_url = reverse_lazy('login')
     template_name = 'registration/signup.html'
 
-class CustomLogoutView(LogoutView):
-    http_method_names = ['post']
-    next_page = reverse_lazy('login')
-    template_name = 'registration/logout.html'
-    success_url = reverse_lazy('login')
+def custom_logout(request):
+    logout(request)
+    return redirect("login")  # yoki bosh sahifa
