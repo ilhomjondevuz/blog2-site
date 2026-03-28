@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block title %}Bosh sahifa{% endblock title %}
+
+{% block content %}
+{% if user.is_authenticated %}
+{{ user.usernsme }}
+<a href="{% url 'logout' %}">Chiqib ketish</a>
+{% else %}
+<p>Siz saytga kirmagansiz</p>
+<a href="{% url 'login' %}">Kirish</a> |
+<a href="{% url 'signup' %}">Ro'yxatdan o'tish</a>
+{% endif %}
+{% endblock content %}
