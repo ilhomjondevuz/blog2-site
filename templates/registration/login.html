@@ -10,5 +10,6 @@
     {% csrf_token %}
     {{ form|crispy }}
     <button type="submit" class="btn btn-success">Kirish</button>
+<a href="{% url 'password_reset' %}" type="button" class="btn btn-danger">Parolni tiklash</a>
 </form>
 {% endblock content %}

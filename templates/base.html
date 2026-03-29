@@ -1,4 +1,3 @@
-{% load crispy_forms_tags %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -38,7 +37,7 @@
           </a>
           <ul class="dropdown-menu dropdown-menu-end">
             <li><a class="dropdown-item" href="#">Yangi blog</a></li>
-            <li><a class="dropdown-item" href="#">Parolni o'zgartirish</a></li>
+            <li><a class="dropdown-item" href="{% url 'password_change' %}">Parolni o'zgartirish</a></li>
             <li><a class="dropdown-item" href="{% url 'logout' %}">Chiqish</a></li>
           </ul>
         </li>
