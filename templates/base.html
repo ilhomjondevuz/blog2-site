@@ -8,12 +8,14 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary bg-gradient shadow">
   <div class="container-fluid">
     <!-- Logo -->
-    <a class="navbar-brand" href="{% url 'home' %}">Ilhomjondev</a>
+    <a class="navbar-brand fw-bold text-uppercase" href="{% url 'home' %}">
+      Ilhomjondev
+    </a>
 
-    <!-- Toggler (mobil uchun) -->
+    <!-- Toggler -->
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
       aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -36,9 +38,11 @@
             {{ user.username }}
           </a>
           <ul class="dropdown-menu dropdown-menu-end">
-            <li><a class="dropdown-item" href="{% url 'article_create' %}">Yangi blog</a></li>
-            <li><a class="dropdown-item" href="{% url 'password_change' %}">Parolni o'zgartirish</a></li>
-            <li><a class="dropdown-item" href="{% url 'logout' %}">Chiqish</a></li>
+            {% if user.is_authenticated and user.is_superuser or user.is_staff %}
+            <li><a class="dropdown-item" href="{% url 'article_create' %}">✍️ Yangi blog</a></li>
+            {% endif %}
+            <li><a class="dropdown-item" href="{% url 'password_change' %}">🔑 Parolni o'zgartirish</a></li>
+            <li><a class="dropdown-item text-danger" href="{% url 'logout' %}">🚪 Chiqish</a></li>
           </ul>
         </li>
         {% else %}
@@ -46,13 +50,14 @@
           <a class="btn btn-success me-2" href="{% url 'login' %}">Kirish</a>
         </li>
         <li class="nav-item">
-          <a class="btn btn-primary" href="{% url 'signup' %}">Ro'yxatdan o'tish</a>
+          <a class="btn btn-warning text-dark" href="{% url 'signup' %}">Ro'yxatdan o'tish</a>
         </li>
         {% endif %}
       </ul>
     </div>
   </div>
 </nav>
+
 
 <main class="container mt-4">
     {% block content %}

@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block title %}404 Not Found{% endblock title %}
+
+{% block content %}
+<div class="container mt-5 text-center">
+    <h1 class="display-3 text-warning">😕 404</h1>
+    <h2 class="mb-3">Sahifa topilmadi</h2>
+    <p class="lead">
+        Siz izlagan sahifa mavjud emas yoki o‘chirib tashlangan bo‘lishi mumkin.
+    </p>
+    <a href="{% url 'home' %}" class="btn btn-primary mt-3">
+        Bosh sahifaga qaytish
+    </a>
+</div>
+{% endblock content %}
