@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %}
+  {% if is_update %}
+    Maqolani o'zgartirish
+  {% else %}
+    Maqola qo'shish
+  {% endif %}
+{% endblock title %}
+
+{% block content %}
+<div class="container mt-4">
+    <h2 class="mb-3">
+      {% if is_update %}
+        Maqolani o'zgartirish
+      {% else %}
+        Yangi maqola qo'shish
+      {% endif %}
+    </h2>
+    <form action="" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form|crispy }}
+        <button type="submit" class="btn btn-primary">
+          {% if is_update %}Yangilash{% else %}Saqlash{% endif %}
+        </button>
+    </form>
+</div>
+{% endblock content %}

@@ -36,7 +36,7 @@
             {{ user.username }}
           </a>
           <ul class="dropdown-menu dropdown-menu-end">
-            <li><a class="dropdown-item" href="#">Yangi blog</a></li>
+            <li><a class="dropdown-item" href="{% url 'article_create' %}">Yangi blog</a></li>
             <li><a class="dropdown-item" href="{% url 'password_change' %}">Parolni o'zgartirish</a></li>
             <li><a class="dropdown-item" href="{% url 'logout' %}">Chiqish</a></li>
           </ul>
