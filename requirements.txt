@@ -2,7 +2,9 @@ asgiref==3.11.1
 backports-datetime-fromisoformat==2.0.3
 crispy-bootstrap5==2026.3
 Django==5.2.12
+django-ckeditor==6.7.3
 django-crispy-forms==2.6
+django-js-asset==3.1.2
 environs==14.6.0
 marshmallow==4.2.3
 pillow==12.1.1

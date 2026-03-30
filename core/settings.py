@@ -35,6 +35,8 @@ INSTALLED_APPS = [
     # packages
     'crispy_forms',
     'crispy_bootstrap5',
+    'ckeditor',
+    'ckeditor_uploader',
 
     # local apps
     'accounts.apps.AccountsConfig',
@@ -159,3 +161,12 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 # EMAIL_HOST_USER = 'your_outlook_email@outlook.com'
 # EMAIL_HOST_PASSWORD = 'your_password_or_app_password'
 # DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
+
+# Ckeditor
+CKEDITOR_CONFIGS = {
+    'default': {
+        'toolbar': 'Full',
+    },
+}
+
+CKEDITOR_UPLOAD_PATH = "uploads/"
