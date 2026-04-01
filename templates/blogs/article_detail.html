@@ -37,7 +37,7 @@
       <div class="card-header">Izohlar</div>
       <ul class="list-group">
         {% for comment in article.comments.all %}
-          <li class="list-group-item">{{ comment.body | safe }} Muallif: {{ comment.author.username }}</li>
+          <li class="list-group-item">{{ comment.body | safe }} <br>Muallif: | {{ comment.author.username }}</li>
         {% endfor %}
       </ul>
 
